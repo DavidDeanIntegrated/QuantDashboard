@@ -16,10 +16,8 @@ st.divider()
 # --- Tier 1 ---
 st.markdown("## Tier 1: Free ($0/month) — Surprisingly Capable")
 
-col1, col2 = st.columns([2, 1])
-with col1:
-    st.markdown(
-        """
+st.markdown(
+    """
 At zero cost, you can paper trade every asset class, backtest strategies on years
 of historical data, and deploy a live dashboard.
 
@@ -34,31 +32,17 @@ of historical data, and deploy a live dashboard.
 
 **Backtesting**: vectorbt or backtrader locally
 """
-    )
-with col2:
-    st.markdown("### Monthly Cost")
-    st.markdown(
-        """
-| Item | Cost |
-|------|------|
-| Data | $0 |
-| Brokerage | $0 |
-| Hosting | $0 |
-| Backtesting | $0 |
-| **Total** | **$0** |
-"""
-    )
-    st.success("**This tier is where you should spend months 1–3.**")
+)
+
+st.success("**This tier is where you should spend months 1–3.**")
 
 st.divider()
 
 # --- Tier 2 ---
 st.markdown("## Tier 2: Serious Hobby ($50–$150/month)")
 
-col1, col2 = st.columns([2, 1])
-with col1:
-    st.markdown(
-        """
+st.markdown(
+    """
 Adding Polygon Starter ($29/month) unlocks unlimited API calls, WebSockets, and
 5 years of history. A DigitalOcean droplet ($12/month) provides persistent
 hosting for a trading bot.
@@ -70,31 +54,24 @@ infrastructure costs to consume 40–80% of returns if you target 15% annually.
 Commission-free trading on Alpaca means your primary cost friction is bid-ask
 spreads (typically $0.01–$0.05/share).
 """
-    )
-with col2:
-    st.markdown("### Monthly Cost")
-    st.markdown(
-        """
-| Item | Cost |
-|------|------|
-| Polygon Starter | $29 |
-| VPS Hosting | $12 |
-| Domain / Misc | $5–$10 |
-| **Total** | **~$50–$65** |
+)
 
-*(Excluding trading capital)*
-"""
-    )
+st.markdown("**Monthly Breakdown:**")
+col1, col2, col3, col4 = st.columns(4)
+col1.metric("Polygon Starter", "$29")
+col2.metric("VPS Hosting", "$12")
+col3.metric("Domain / Misc", "$5–10")
+col4.metric("Total", "~$50–65")
+
+st.caption("Excluding trading capital")
 
 st.divider()
 
 # --- Tier 3 ---
 st.markdown("## Tier 3: Semi-Professional ($500–$2,000/month)")
 
-col1, col2 = st.columns([2, 1])
-with col1:
-    st.markdown(
-        """
+st.markdown(
+    """
 - **Polygon Advanced** ($199/mo) — real-time data, 20+ years history
 - **Thetadata Standard** ($80/mo) — tick-level options data
 - **ORATS** ($99/mo) — proprietary analytics
@@ -107,32 +84,25 @@ days) and makes options strategies viable (need $2,500+ per 100-share lot).
 At $50,000 capital targeting 15% returns, infrastructure costs of $500–$850/month
 are manageable but not trivial.
 """
-    )
-with col2:
-    st.markdown("### Monthly Cost")
-    st.markdown(
-        """
-| Item | Cost |
-|------|------|
-| Polygon Advanced | $199 |
-| Thetadata | $80 |
-| ORATS | $99 |
-| Infrastructure | $100–$250 |
-| **Total** | **$500–$850** |
+)
 
-*(Excluding trading capital)*
-"""
-    )
+st.markdown("**Monthly Breakdown:**")
+col1, col2, col3, col4, col5 = st.columns(5)
+col1.metric("Polygon Advanced", "$199")
+col2.metric("Thetadata", "$80")
+col3.metric("ORATS", "$99")
+col4.metric("Infrastructure", "$100–250")
+col5.metric("Total", "$500–850")
+
+st.caption("Excluding trading capital")
 
 st.divider()
 
 # --- Tier 4 ---
 st.markdown("## Tier 4: Professional ($2,000+/month)")
 
-col1, col2 = st.columns([2, 1])
-with col1:
-    st.markdown(
-        """
+st.markdown(
+    """
 - **Bloomberg Terminal**: $2,305–$2,665/month on a 2-year lease (6.5% price
   increase in 2025)
 - **Co-location at Equinix NY4**: ~$3,500/month per rack + $500–$2,000/month per
@@ -142,19 +112,14 @@ with col1:
 All-in infrastructure for multi-venue presence: **$7,000–$15,000+/month**,
 requiring $500K+ in trading capital to justify economically.
 """
-    )
-with col2:
-    st.markdown("### Monthly Cost")
-    st.markdown(
-        """
-| Item | Cost |
-|------|------|
-| Bloomberg | $2,305–$2,665 |
-| Co-location | $3,500+ |
-| Cross-connects | $500–$2,000 |
-| Data feeds | $1,000–$3,000 |
-| **Total** | **$7K–$15K+** |
+)
 
-*Requires $500K+ capital*
-"""
-    )
+st.markdown("**Monthly Breakdown:**")
+col1, col2, col3, col4, col5 = st.columns(5)
+col1.metric("Bloomberg", "$2,305–2,665")
+col2.metric("Co-location", "$3,500+")
+col3.metric("Cross-connects", "$500–2,000")
+col4.metric("Data Feeds", "$1,000–3,000")
+col5.metric("Total", "$7K–15K+")
+
+st.caption("Requires $500K+ in trading capital to justify economically")
